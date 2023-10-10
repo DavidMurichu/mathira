@@ -1,0 +1,43 @@
+
+<style>
+    /* Add your existing styles here */
+    /* ... */
+
+    /* Additional styles for the improved design */
+    .container {
+      padding-top: 50px;
+    }
+
+    .card {
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+  <!-- Section: Design Block -->
+  <div class="bg-dark">
+  <div class="background-radial-gradient overflow-hidden bg-dark">
+   
+
+    <div class="container text-center bg-dark">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="card mb-5">
+            <div class="card-body">
+              <h5 class="card-title">Registration Successful!</h5>
+              <p class="card-text">Thank you for registering. To activate your account, please check your email and click the activation link.</p>
+              <p class="card-text">If you don't receive an email within a few minutes, please check your spam folder.</p>
+            </div>
+          </div>
+
+          <p><a href="{% url 'login' %}">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'js/register.js' %}"></script>
+
+  </div>
+  <!-- Section: Design Block -->

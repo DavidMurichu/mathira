@@ -1,0 +1,110 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+    {% block content %}
+    <div class="pagetitle">
+        <h1>Project</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Components</li>
+            <li class="breadcrumb-item active">Project</li>
+          </ol>
+        </nav>
+      </div><!-- End Page Title -->
+  
+      <section class="section">
+        <div class="container">
+        <div class="row ">
+          
+  <div class="col-lg-6 mb-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Upcoming Projects</h5>
+                 <a href="{% url 'images' column_name='Upcoming_Project' model='Upcoming_Project_Images' %}">Edit</a>
+                <!-- Slides only carousel -->
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                            
+                        <img src="{% static 'img/projects/upcoming/upcoming.jpeg' %}" class="d-block w-100" alt="...">
+                      </div>
+                    {% for upcoming_project in upcoming_projects %}
+                    {% if upcoming_project != '' %}
+                    <div class="carousel-item ">
+                      <img src="/{{upcoming_project}}" class="d-block w-100" alt="...">
+                    </div>
+                    {% endif %}
+
+                    {% endfor %}
+                  </div>
+                </div><!-- End Slides only carousel-->
+            </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-6">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Ongoing</h5>
+                   <a href="{% url 'images' column_name='Ongoing_Project' model='Ongoing_Project_Images' %}">Edit</a>
+                  <!-- Slides only carousel -->
+                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            
+                            <img src="{% static 'img/projects/ongoing/ongoing.jpeg' %}" class="d-block w-100" alt="...">
+                          </div>
+                        {% for ongoing_project in ongoing_projects %}
+                        {% if ongoing_project != '' %}
+                        <div class="carousel-item">
+                          <img src="/{{ongoing_project}}" class="d-block w-100" alt="...">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+
+                    </div>
+                  </div><!-- End Slides only carousel-->
+                </div>
+                </div>
+              </div>
+
+ 
+            
+            
+            <div class="col-lg-6 mb-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Past</h5>
+                   <a href="{% url 'images' column_name='Past_Project' model='Past_Project_Images' %}">Edit</a>
+                  <!-- Slides only carousel -->
+                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                              
+                          <img src="{% static 'img/projects/past/past.jpeg' %}" class="d-block w-100" alt="...">
+                        </div>
+                      {% for past_project in past_projects %}
+                      {% if past_project != '' %}
+                      <div class="carousel-item ">
+                        <img src="/{{past_project}}" class="d-block w-100" alt="...">
+                      </div>
+                      {% endif %}
+  
+                      {% endfor %}
+                    </div>
+                  </div><!-- End Slides only carousel-->
+              </div>
+                </div>
+              </div>
+
+
+            </div>
+             
+
+          </div>
+        </div>
+      </section>
+
+
+
+    {% endblock %}

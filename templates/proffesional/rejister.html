@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+ 
+
+            <div class="container-fluid bg-primary feature py-5 pb-lg-0 w-100" id="How-to-Apply" style="margin-bottom: 135px;">
+                <div class="container py-5 pb-lg-0">
+                    <div class="row g-5">
+                        <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 " style="border-radius: 100px;" >
+                            <h6 class=" text-uppercase p-3">Are you a Mathira Proffessional?</h6>
+                            <h1 class="display-6" id="#">Register</h1>
+                        </div>
+                        <div class="container-fluid bg-primary feature py-5 pb-lg-0" id="How-to-Apply" style="margin-bottom: 135px;">
+                            <div class="container py-5 pb-lg-0">
+                                <div class="row g-5">
+                                    <div class="col-lg-6">
+                                        <div class="text-white mb-5">
+                                            <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                                <i class="fa fa-phone"></i>
+
+                                            </div>
+                                            <h4 class="text-white">Contacting the MP's Office </h4>
+                                            <p class="mb-0"> To book an appointment with the MP in Mathira, residents can contact the office through phone 0706 202 203 or email us info@Mathiraconstitueny.com The office staff will then provide available dates for the meeting and schedule an appointment.</p>
+                                            <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                                <i class="fa fa-clock fs-4 text-white"></i> 
+                                            </div>
+                                            <h4 class="text-white">Confirming the Appointment</h4>
+                                            <p class="mb-0">After booking the appointment, residents are required to confirm the meeting by providing personal details such as their name and ID number. This helps in verifying their identity and ensuring that the meeting is productive.</p>
+                                        </div>
+                                    </div>
+                        <div class="col-lg-6" id="OnlineReg">
+                            <div class="bg-dark h-100 d-flex justify-content-between">
+                        
+                                <div class=" wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class=" rounded h-100 d-flex align-items-center p-5">
+                              
+                                <form method="POST">
+                                    <div class="row g-3">
+                                     
+                                        {% csrf_token %}
+                        
+            
+                            
+               
+
+
+                            
+                    
+                            
+
+                            
+                  
+                    
+                            
+                    
+                            
+                
+                            <!-- Add the form fields from forms.py -->
+                         <div class="row g-3 text-white" >
+                            <div class="col-md-6">
+                                {{ form.name.label_tag }} {{ form.name }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.email.label_tag }} {{ form.email }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.id_number.label_tag }} {{ form.id_number }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.proffession.label_tag }} {{ form.proffession }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.education_level.label_tag }} {{ form.education_level }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.age.label_tag }} {{ form.age }}
+
+                            </div>
+                            <div class="col-md-6">
+
+                                {{ form.phone_number.label_tag }} {{ form.phone_number }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.gender.label_tag }} {{ form.gender }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.ward.label_tag }} {{ form.ward }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.location.label_tag }} {{ form.location }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.sub_location.label_tag }} {{ form.sub_location }}
+
+                            </div>
+                            <div class="col-md-6">
+                            {{ form.date.label_tag }} {{ form.date }}
+
+                            </div>
+
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100 py-3" type="submit">Register</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        
+            
+                        
+                    </div>
+                </div>
+
+            </div>
+        
+
+
+
+
+    
+    
+{% endblock %}
+
+
+
+
+
+
+  

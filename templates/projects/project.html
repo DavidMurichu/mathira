@@ -1,0 +1,68 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+       
+
+
+
+    <div class="container py-5 pb-lg-0 container-fluid bg-footer feature">
+      <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+        <h6 class=" text-uppercase p-3">{{type}} Images</h6>
+       
+      </div>
+        <div class="card col-lg-12 bg-dark">
+        
+        <section class="section">
+            <div class="container">
+            <div class="row ">
+              {% for image in images %}
+      <div class="col-md-4 mb-4">
+                <div class="card bg-dark">
+                  <div class="card-body">
+                
+                    <!-- Slides only carousel -->
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                                
+                            <img src="/{{ image }}" class="d-block w-100" alt="...">
+                          </div>
+                       
+                      </div>
+                    </div><!-- End Slides only carousel-->
+                </div>
+                  </div>
+                </div>
+
+                {% endfor %}
+               
+                
+                
+               
+    
+    
+                </div>
+                 
+    
+              </div>
+            </div>
+          </section>
+                    </div>
+                </div>
+
+                    
+      
+   
+
+
+<!-- End Modals -->
+
+
+
+    
+
+
+{% endblock %}

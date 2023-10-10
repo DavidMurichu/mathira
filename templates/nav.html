@@ -1,0 +1,106 @@
+  <!-- Topbar Start -->
+  <div class="container-fluid px-5 d-none d-lg-block" style="background-color:black;" >
+    <div class="row gx-5 py-3 align-items-center">
+        <div class="col-lg-3">
+            <div class="d-flex align-items-center justify-content-start">
+                <i class="bi bi-phone-vibrate fs-1 text-secondary me-2"></i>
+                <h4 class="mb-0">0111204383</h4>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="{% url 'home' %}" class="navbar-brand ms-lg-5">
+                    <h1 class="m-1 display-4 "><span class="text-secondary">Mathira</span> Constituency
+                    </h1>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="d-flex align-items-center justify-content-end">
+                <a class="btn btn-secondary btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-secondary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-secondary btn-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-secondary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+   
+   
+  
+  <nav class="navbar navbar-expand-lg bg-sbtn-secondary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+      <a href="{% url 'home' %}" class="navbar-brand d-flex d-lg-none">
+          <h1 class="m-0 display-4 text-secondary"><span class="text-white">Mathira</span> Constituency</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-white" id="navbarCollapse">
+          <div class="navbar-nav text-white mx-auto py-0">
+              <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+              <!--<a href="{% static 'About-Us" class="nav-item nav-link">About Us</a>-->
+              <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Bursaries</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="{% url 'busary' %}" class="dropdown-item">Application Process</a>
+                      <a href="{% url 'busary_sta' %}" class="dropdown-item">Bursary Statistics</a>
+                  </div>
+              </div>
+              <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects & Programs</a>
+                  <div class="dropdown-menu m-0">
+  
+                          <a href="{% url 'request_project' %}" class="dropdown-item">Request a Project</a>
+                          <a href="{% url 'project' %}" class="dropdown-item">NG-CDF Projects</a>
+                          <a href="{% url 'project' %}" class="dropdown-item">Road Projects</a>
+                          <a href="{% url 'project' %}" class="dropdown-item">Uwezo Fund Program</a>
+                          <a href="{% url 'project' %}" class="dropdown-item">TCDL Programs</a>
+                          <a href="{% url 'project' %}" class="dropdown-item">Diversity and Inclusion</a>
+                          <a href="{% url 'project' %}" class="dropdown-item">Other Projects</a>
+                  </div>
+              </div>
+              <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Opportunities</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="{% url 'oppotunity' %}" class="dropdown-item">Registration Process</a>
+                      <a href="{% url 'oppotunity_sta' %}" class="dropdown-item">Opportunity Statistics</a>
+                      <!--<a href="{% static 'Opportunities/Job-Data" class="dropdown-item">Our Job Database</a>-->
+                  </div>
+              </div>
+              <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="{% url 'upcoming_events' %}" class="dropdown-item">Upcoming Events</a>
+                      <a href="{% url 'past_events' %}" class="dropdown-item">Past Events (2023)</a>
+                      <a href="{% url 'gallery' %}" class="dropdown-item">Mathira Gallery</a>
+                  </div>
+              </div>
+              <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Appointments</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="{% url 'appointment' %}" class="dropdown-item">Book an Appointment</a>
+                      <a href="{% url 'contact_us' %}" class="dropdown-item">Contact Us</a>
+                  </div>
+              </div>
+              <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Professionals</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="{% url 'proffessionals' %}" class="dropdown-item">About Professionals</a>
+                      <a href="{% url 'prof_rejister' %}" class="dropdown-item">Register</a>
+                  </div>
+              </div>
+               <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Diaspora</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="{% url 'diaspora' %}" class="dropdown-item">Diaspora Affairs</a>
+                      <a href="{% url 'diaspora_rejister' %}" class="dropdown-item">Diaspora Registration</a>
+                  </div>
+              </div>
+   
+  
+              <a href="{% url 'login' %}" class="nav-item nav-link">Staff Login</a>
+       
+          </div>
+      </div>
+  </nav>

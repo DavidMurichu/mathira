@@ -1,0 +1,22 @@
+{% if messages %}
+<div class="messages ">
+    {% for message in messages %}
+    <div id="message" class="alert alert-primary alert-dismissible fade show position-absolute align-items-center text-center" role="alert" style="z-index: 100; width: auto;">
+        {{message}}
+        
+      </div>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<script>
+    function dismiss(){
+        var message=document.getElementById('message');
+      
+            setTimeout(function(){
+                message.remove();
+            }, 10000);
+    
+    }
+    dismiss()
+  </script>

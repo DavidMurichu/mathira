@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    
+
+<div class="container-fluid bg-dark feature py-5 pb-lg-0 mb-3" id="How-to-Apply">
+    <div class="container py-5 pb-lg-0">
+        <div class="row g-5">
+            <div class="col-lg-3">
+                <div class="feature-item text-center">
+                    <div class="feature-icon bg-success">
+                        <i class="fas fa-clipboard-check fs-4 text-white"></i>
+                    </div>
+                    <h4 class="text-white">Attend Bursary Meeting</h4>
+                    <p>Be part of the Bursary Meeting where you can register and get acquainted with the application process. These meetings are held periodically to guide applicants.</p>
+                </div>
+                <div class="feature-item text-center">
+                    <div class="feature-icon bg-primary">
+                        <i class="fas fa-file-signature fs-4 text-white"></i>
+                    </div>
+                    <h4 class="text-white">Submit Your Application</h4>
+                    <p>Complete the application process by submitting all required documents. This includes academic transcripts and photocopies of relevant IDs.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="col-lg-6">
+                    <div class="text-center">
+
+                        <i class="fas fa-users fa-5x text-white "></i><br>
+                        <i class="fas fa-long-arrow-alt-down fa-5x text-white"></i><br>
+
+
+                        <i class="fas fa-clipboard-check fa-5x text-white"></i>
+                        <i class="fas fa-long-arrow-alt-right fa-5x text-white"></i>
+                        <i class="fas fa-hourglass-half fa-5x text-white"></i><br>
+                        <i class="fas fa-long-arrow-alt-down fa-5x text-white"></i><br>
+
+
+                        <i class="fas fa-handshake fa-5x text-white "></i>
+
+                    </div>
+                </div>  </div>
+            <div class="col-lg-3">
+                <div class="feature-item text-center">
+                    <div class="feature-icon bg-info">
+                        <i class="far fa-clock fs-4 text-white"></i> 
+                    </div>
+                    <h4 class="text-white">Wait for Processing</h4>
+                    <p>Once the application period ends, our dedicated committee will carefully review each application. This process may take some time as we ensure fairness and accuracy in the selection.</p>
+                </div>
+                <div class="feature-item text-center">
+                    <div class="feature-icon bg-warning">
+                        <i class="fas fa-hand-holding-usd fs-4 text-white"></i>
+                    </div>
+                    <h4 class="text-white">Receive Your Bursary</h4>
+                    <p>Congratulations! Successful applicants will be notified of their bursary awards. The awarded funds will be disbursed to the respective educational institutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+    <h6 class=" text-uppercase p-3">Busary Images</h6>
+   
+  </div>
+    <div class="container py-5 pb-lg-0 container-fluid bg-footer feature">
+        <div class="card col-lg-12 bg-dark">
+        
+        <section class="section">
+            <div class="container">
+            <div class="row ">
+              {% for image in images %}
+      <div class="col-md-4 mb-4">
+                <div class="card bg-dark">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Busary Image</h5>
+                    <!-- Slides only carousel -->
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                                
+                            <img src="/{{ image }}" class="d-block w-100" alt="...">
+                          </div>
+                       
+                      </div>
+                    </div><!-- End Slides only carousel-->
+                </div>
+                  </div>
+                </div>
+
+                {% endfor %}
+               
+                
+                
+               
+    
+    
+                </div>
+                 
+    
+              </div>
+            </div>
+          </section>
+                    </div>
+                </div>
+
+                    
+      
+   
+
+
+<!-- End Modals -->
+
+
+
+ 
+
+    
+
+{% endblock %}
+

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container-fluid bg-dark feature py-5 pb-lg-0 shadow p-3 mb-5 rounded border border-light" id="How-to-Apply" style="margin-bottom: 135px;">
+        
+        <div class="container py-5 pb-lg-0">
+            <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 " style="border-radius: 100px;" >
+                <h6 class=" text-uppercase p-3">Are you a Mathira Residentl?</h6>
+                <h1 class="display-6" id="#">Register</h1>
+            </div>
+            <div class="row g-5">
+                <div class="container-fluid bg-dark feature py-5 pb-lg-0" id="How-to-Apply" style="margin-bottom: 135px;">
+                    <div class="container py-5 pb-lg-0">
+                        <div class="row g-5">
+                            <div class="col-lg-6">
+                                <div class="text-white mb-5">
+                                    <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-users fs-4 text-white"></i>
+                                    </div>
+                                    <h4 class="text-white">Contacting the MP's Office </h4>
+                                    <p class="mb-0"> To book an appointment with the MP in Mathira, residents can contact the office through phone 0706 202 203 or email us info@Mathiraconstitueny.com The office staff will then provide available dates for the meeting and schedule an appointment.</p>
+                                    <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-clock fs-4 text-white"></i> 
+                                    </div>
+                                    <h4 class="text-white">Confirming the Appointment</h4>
+                                    <p class="mb-0">After booking the appointment, residents are required to confirm the meeting by providing personal details such as their name and ID number. This helps in verifying their identity and ensuring that the meeting is productive.</p>
+                                </div>
+                            </div>
+                <div class="col-lg-6" id="OnlineReg">
+                    <div class="d-block bg-primary h-100 text-center p-5 pb-lg-0">
+                    
+                        <h4 class="text-white">Online Registration</h4>
+                        <form method="POST" >
+
+                            {% csrf_token %}
+                            {% include 'partials/messages.html' %}
+                            <!-- Add the form fields from forms.py -->
+                         <div class="row g-3 text-dark" >
+                            <div class="col-md-6">
+                                {{ form.name.label_tag }} {{ form.name }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.id_number.label_tag }} {{ form.id_number }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.country_Code.label_tag }}   {{ form.country_Code }}
+                            </div>
+                            <div class="col-md-6">    
+                                {{ form.phone_number.label_tag }} {{ form.phone_number }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.gender.label_tag }} {{ form.gender }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.education_level.label_tag }} {{ form.education_level }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.employment_status.label_tag }} {{ form.employment_status }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.ward.label_tag }} {{ form.ward }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.location.label_tag }} {{ form.location }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.sub_location.label_tag }} {{ form.sub_location }}
+
+                            </div>
+                            <div class="col-md-6">
+                            {{ form.date.label_tag }} {{ form.date }}
+
+                            </div>
+
+                            
+                          
+                            <button type="submit" class="btn btn-primary py-md-3 px-md-5">Submit</button>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+    <script>
+        // JavaScript code here
+    </script>
+{% endblock %}

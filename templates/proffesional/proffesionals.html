@@ -1,0 +1,87 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container-fluid py-2">
+        <div class="container">
+            <div class="mx-auto text-center mb-5" style="max-width: 500px;">
+                <h3 class="text-white text-uppercase">Professionals Affairs</h3>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6">
+                    <div class="bg-dark h-100 p-5">
+                        <p class="text-white">
+                        Mathira has one of the most educated and enterprising people in Kenya. <br>
+                        We have thousands on our professionals and business people in ALL sectors of the economy. We would like to harness this resource pool for the development of our ituency. On March 3rd 2023 about 400 of these professionals gathered at Hotel Mercure for the 1st Edition of the Mathira Professionals Dinner which was graced by H.E the Deputy President of the Republic of Kenya Hon.Rigathi Gachagua.<br>
+
+                        The professional have formed themselves into 35 sub-location based groups focussing on local issues as follows:- <br>
+                        </p><br> 
+
+                        <ol class="text-white">
+                            <li>Support for the local primary school / secondary schools (where applicable) through:-<br>
+                            - A motivation program for teachers and students
+                            - Scholarships program for bright but needy students
+                            - Alumni led projects to complement the work of NG-CDF
+                            - Participation in School Boards
+                            </li>
+                            <li>
+                            Support for the MOST vulnerable members of the community<br>
+                            - Upgrading of mud-houses 
+                            - Dignity kits for the most poor.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-primary h-100 p-5">
+                        <p class="text-white">
+                            We have also created 10-thematic committees made up of specialist professionals to support the MP to deliver his agenda as follow:-
+                        </p> 
+                        <ol class="text-white">
+                            <li>Education, Youth and Sports Committee</li>
+                            <li>Agriculture, Dairy and Fisheries Committee</li>
+                            <li>Digitisation and ICT Committee</li>
+                            <li>Heath and Wellness Committee</li>
+                            <li>Infrastructure Committee</li>
+                            <li>SME, Trade and Light Manufacturing Committee</li>
+                            <li>Environment and Green Economy Committee</li>
+                            <li>Resource Mobilisation Committee</li>
+                            <li>Investment Groups and Diaspora Affairs Committee</li>
+                            <li> Support for the Vulnerable Committee</li>
+                        </ol> 
+                        <p class="text-white">
+                        The committees have been instrumental in delivering various initiatives including this Mathira Online Portal, Mathira MSME Empowerment Workshop, Mathira Tuinuane SACCO, Mathira Careers and TVET Open Day and Mathira Education Managers Conference. More activities and project are under various stages of planning or implementation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+    <script>
+
+     countryCodeDropdown = document.getElementById("countryCode");
+     phoneNumberInput = document.getElementById("D-Contact");
+     fullPhoneNumberInput = document.getElementById("fullPhoneNumber");
+
+    
+    for (let i = 1; i <= 999; i++) {
+         countryCode = i < 100 ? `+${i}` : `+${i.toString()}`;
+         option = document.createElement("option");
+        option.value = countryCode;
+        option.text = countryCode;
+        countryCodeDropdown.appendChild(option);
+    }
+    </script>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,614 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+    {% block content %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Rest of your form content -->
+        <div class="row mb-3 " style="height: 10%; ">
+
+            
+            <div class="col-lg-6" id="OnlineReg">
+                <div class="d-block text-center p-5 pb-lg-0 " style="background-color: rgba(0, 255, 106, 0.637); border-radius: 10px;">
+                
+                    <h4 class="text-white">Online Registration</h4>
+                    <form method="POST" >
+
+                        {% csrf_token %}
+                        <!-- Add the form fields from forms.py -->
+                     <div class="row g-3 text-dark" >
+                        <div class="col-md-6">
+                            {{ form.name.label_tag }} {{ form.name }}
+                        </div>
+                        <div class="col-md-6">
+                          {{ form.parent_name.label_tag }} {{ form.parent_name }}
+                      </div>
+                      <div class="col-md-6">
+                        {{ form.education_level.label_tag }} {{ form.education_level }}
+                    </div>
+                    <div class="col-md-6">
+                      {{ form.school_name.label_tag }} {{ form.school_name }}
+                  </div>
+                  <div class="col-md-6">
+                    {{ form.admission_number.label_tag }} {{ form.admission_number }}
+                </div>
+                        
+                        <div class="col-md-6">    
+                            {{ form.phone_number.label_tag }} {{ form.phone_number }}
+
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.gender.label_tag }} {{ form.gender }}
+
+                        </div>
+                     
+                        <div class="col-md-6">
+                            {{ form.ward.label_tag }} {{ form.ward }}
+
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.amount.label_tag }} {{ form.amount }}
+    
+                            </div>
+     
+                        <div class="col-md-6">
+                        {{ form.date.label_tag }} {{ form.date }}
+
+                        </div>
+
+                        
+                      
+                        <button type="submit" class="btn btn-primary py-md-3 px-md-5">Submit</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+   
+            <div class="col-lg-6 mb-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Busary </h5>
+                   <a href="{% url 'images' column_name='busary_images' model='Busary_Images' %}">Edit</a>
+                  <!-- Slides only carousel -->
+                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                              
+                          <img src="{% static 'img/busary/busary.jpeg' %}" class="d-block w-100" alt="...">
+                        </div>
+
+                      {% for busary_image in busary_images %}
+                     
+                      {% if busary_image != "" %}
+                      <div class="carousel-item ">
+                        <img src="/{{busary_image}}" class="d-block w-100" alt="...">
+                      </div>
+                      {% endif %}
+  
+                      {% endfor %}
+                    </div>
+                  </div><!-- End Slides only carousel-->
+              </div>
+                </div>
+              </div>
+          
+          </div>
+
+
+      <section class="section" id="high_school">
+        <div class="row">
+          <div class="col-lg-12">
+  
+            <div class="card">
+              <div class="card-body">
+               
+                <h5 class="card-title">Approved Busaries </h5>
+                <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >High Shool</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="#" onclick="toggle('high_school')" class="dropdown-item" >Pending</a>
+                  </div>
+              </div>
+  <div class="table-responsive" >
+                <!-- Table with stripped rows -->
+                <table class="table datatable ">
+                  <thead>
+                    <tr >      
+                      <th scope="col">Date</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Parent</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">School</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Resident</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    {% for date, name, parent,phone, School, gender, Resident,amount,id in high_school_approved %} 
+                    
+                                              
+                    <tr>
+                      <td >{{ date }}</td>
+                      <td>{{ name }} </td>
+                      <td>{{ parent }} </td> 
+                      <td>{{ phone }}</td>
+                      <td>{{ School }}</td>
+          
+                      <td>{{ gender }}</td>
+
+                      <td>{{ Resident }}</td>
+                      <td>{{ amount }}</td>
+                       <td>{{ data.gender }} </td> 
+                       <td>{{ data.ward }}</td>
+                       <td>{{ data.date }}</td>
+
+                       
+                       <td><a
+                        href="{% url 'delete' id=id model='Busaryapproved' %}"
+                        class="btn btn-danger btn-sm"
+                        >Delete</a
+                      ></td>
+                   
+                       
+                    </tr>
+
+                                
+                                    
+                    {% endfor %}
+                   
+                    
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+            </div>
+
+              </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="high_school_approved" style="display: none;">
+        <div class="row">
+          <div class="col-lg-12">
+  
+            <div class="card">
+              <div class="card-body">
+               
+                <h5 class="card-title">Pending Busaries</h5>
+                <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >High School</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="#" onclick="toggle('high_school')" class="dropdown-item" >Approved</a>
+                  </div>
+              </div>
+              <div class="table-responsive" >
+                <!-- Table with stripped rows -->
+                <table class="table datatable table-responsivee">
+                  <thead>
+                    <tr >      
+                      <th scope="col">Date</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Parent</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">School</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Resident</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    {% for date, name, parent,phone, School, gender, Resident,amount,id in high_school %} 
+                    
+                                              
+                    <tr>
+                      <td >{{ date }}</td>
+                      <td>{{ name }} </td>
+                      <td>{{ parent }} </td> 
+                      <td>{{ phone }}</td>
+                      <td>{{ School }}</td>
+          
+                      <td>{{ gender }}</td>
+
+                      <td>{{ Resident }}</td>
+                      <td>{{ amount }}</td>
+
+
+                        
+
+                       <td>{{ data.gender }} </td> 
+                       <td>{{ data.ward }}</td>
+                       <td>{{ data.date }}</td>
+
+                       
+                       <td><a
+                        href="{% url 'delete' id=id model='Busary' %}"
+                        class="btn btn-danger btn-sm"
+                        >Delete</a
+                      ></td>
+                      <td>
+                        <a type="button" class="btn btn-success btn-sm"
+                        href="{% url 'approve' id=id model='Busary' %}"
+                        >Approve</a>
+
+                       </td>
+                       
+                    </tr>
+
+                                
+                                    
+                    {% endfor %}
+                   
+                    
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+              </div>
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+
+        <section class="section" id="collage">
+        <div class="row">
+          <div class="col-lg-12">
+  
+            <div class="card">
+              <div class="card-body">
+               
+                <h5 class="card-title">Approved Busaries </h5>
+                <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >Collage</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="#" onclick="toggle('collage')" class="dropdown-item" >Pending</a>
+                  </div>
+              </div>
+              <div class="table-responsive" >
+                <!-- Table with stripped rows -->
+                <table class="table datatable table-responsivee">
+                  <thead>
+                    <tr >      
+                      <th scope="col">Date</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Parent</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">School</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Resident</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    {% for date, name, parent,phone, School, gender, Resident,amount,id in collage_approved %} 
+                    
+                                              
+                    <tr>
+                      <td >{{ date }}</td>
+                      <td>{{ name }} </td>
+                      <td>{{ parent }} </td> 
+                      <td>{{ phone }}</td>
+                      <td>{{ School }}</td>
+          
+                      <td>{{ gender }}</td>
+
+                      <td>{{ Resident }}</td>
+                      <td>{{ amount }}</td>
+                       <td>{{ data.gender }} </td> 
+                       <td>{{ data.ward }}</td>
+                       <td>{{ data.date }}</td>
+
+                       
+                       <td><a
+                        href="{% url 'delete' id=id model='Busaryapproved' %}"
+                        class="btn btn-danger btn-sm"
+                        >Delete</a
+                      ></td>
+                   
+                       
+                    </tr>
+
+                                
+                                    
+                    {% endfor %}
+                   
+                    
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+              </div>
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+
+      <section class="section table-responsivee"  id="collage_approved" style="display: none;" >
+        <div class="row">
+          <div class="col-lg-12">
+  
+            <div class="card">
+              <div class="card-body">
+               
+                <h5 class="card-title">Pending Busaries</h5>
+                <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >Collage</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="#" onclick="toggle('collage')" class="dropdown-item" >Approved</a>
+                  </div>
+              </div>
+              <div class="table-responsive" >
+                <!-- Table with stripped rows -->
+                <table class="table datatable table-responsivee">
+                  <thead>
+                    <tr >      
+                      <th scope="col">Date</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Parent</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">School</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Resident</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    {% for date, name, parent,phone, School, gender, Resident,amount,id in collage %} 
+                    
+                                              
+                    <tr>
+                      <td >{{ date }}</td>
+                      <td>{{ name }} </td>
+                      <td>{{ parent }} </td> 
+                      <td>{{ phone }}</td>
+                      <td>{{ School }}</td>
+          
+                      <td>{{ gender }}</td>
+
+                      <td>{{ Resident }}</td>
+                      <td>{{ amount }}</td>
+
+
+                        
+
+                       <td>{{ data.gender }} </td> 
+                       <td>{{ data.ward }}</td>
+                       <td>{{ data.date }}</td>
+
+                       
+                       <td><a
+                        href="{% url 'delete' id=id model='Busaryapproved' %}"
+                        class="btn btn-danger btn-sm"
+                        >Delete</a
+                      ></td>
+
+                      <td>
+                        <a type="button" class="btn btn-success btn-sm"
+                        href="{% url 'approve' id=id model='Busary' %}"
+                        >Approve</a>
+
+                       </td>
+                       
+                    </tr>
+
+                                
+                                    
+                    {% endfor %}
+                   
+                    
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+              </div>
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+      
+
+      <section class="section" id="university">
+        <div class="row">
+          <div class="col-lg-12">
+  
+            <div class="card">
+              <div class="card-body">
+               
+                <h5 class="card-title">Approved Busaries </h5>
+                <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >University</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="#" onclick="toggle('university')" class="dropdown-item" >Pending</a>
+                  </div>
+              </div>
+              <div class="table-responsive" >
+                <!-- Table with stripped rows -->
+                <table class="table datatable table-responsivee">
+                  <thead>
+                    <tr >      
+                      <th scope="col">Date</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Parent</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">School</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Resident</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    {% for date, name, parent,phone, School, gender, Resident,amount,id in university_approved %} 
+                    
+                                              
+                    <tr>
+                      <td >{{ date }}</td>
+                      <td>{{ name }} </td>
+                      <td>{{ parent }} </td> 
+                      <td>{{ phone }}</td>
+                      <td>{{ School }}</td>
+          
+                      <td>{{ gender }}</td>
+
+                      <td>{{ Resident }}</td>
+                      <td>{{ amount }}</td>
+                       <td>{{ data.gender }} </td> 
+                       <td>{{ data.ward }}</td>
+                       <td>{{ data.date }}</td>
+
+                       
+                       <td><a
+                        href="{% url 'delete' id=id model='Busaryapproved' %}"
+                        class="btn btn-danger btn-sm"
+                        >Delete</a
+                      ></td>
+                   
+                       
+                    </tr>
+
+                                
+                                    
+                    {% endfor %}
+                   
+                    
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+  
+            </div>
+          </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="university_approved" style="display: none;">
+        <div class="row">
+          <div class="col-lg-12">
+  
+            <div class="card">
+              <div class="card-body">
+               
+                <h5 class="card-title">Pending Busaries</h5>
+                <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >University</a>
+                  <div class="dropdown-menu m-0">
+                      <a href="#" onclick="toggle('university')" class="dropdown-item" >Approved</a>
+                  </div>
+              </div>
+              <div class="table-responsive" >
+                <!-- Table with stripped rows -->
+                <table class="table datatable table-responsivee">
+                  <thead>
+                    <tr >      
+                      <th scope="col">Date</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Parent</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">School</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Resident</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    {% for date, name, parent,phone, School, gender, Resident,amount,id in university %} 
+                    
+                                              
+                    <tr>
+                      <td >{{ date }}</td>
+                      <td>{{ name }} </td>
+                      <td>{{ parent }} </td> 
+                      <td>{{ phone }}</td>
+                      <td>{{ School }}</td>
+          
+                      <td>{{ gender }}</td>
+
+                      <td>{{ Resident }}</td>
+                      <td>{{ amount }}</td>
+
+
+                        
+
+                       <td>{{ data.gender }} </td> 
+                       <td>{{ data.ward }}</td>
+                       <td>{{ data.date }}</td>
+
+                       
+                       <td><a
+                        href="{% url 'delete' id=id model='Busaryapproved' %}"
+                        class="btn btn-danger btn-sm"
+                        >Delete</a
+                      ></td>
+
+                      <td>
+                        <a type="button" class="btn btn-success btn-sm"
+                        href="{% url 'approve' id=id model='Busary' %}"
+                        >Approve</a>
+
+                       </td>
+                       
+                    </tr>
+
+                                
+                                    
+                    {% endfor %}
+                   
+                    
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+              </div>
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+      
+   
+      <script src="/static/js/toggle.js"></script>
+     
+       
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".delete-link").click(function (event) {
+      event.preventDefault();  // Prevent the default button behavior
+
+      let itemId = $(this).data("id");
+      let model = $(this).data("model");
+
+      $.ajax({
+        url: `/staff/Delete/${itemId}/${model}`,
+        type: "POST",
+        data: { csrfmiddlewaretoken: "{{ csrf_token }}", model: model },
+        success: function () {
+          // Update the HTML to remove the deleted row
+          $('tr[data-id="'+itemId+'"]').remove();
+          alert('Successfully Deleted');
+        },
+        error: function(xhr, status, error) {
+          alert('An error occurred while deleting: ' + error);
+        }
+      });
+    });
+  });
+</script>
+    {% endblock %}

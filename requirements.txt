@@ -1,0 +1,12 @@
+asgiref
+Django
+Pillow
+pycountry
+python-dotenv
+six
+sqlparse
+validate-email
+whitenoise
+bootstrap4
+django-crispy-forms
+tzdata

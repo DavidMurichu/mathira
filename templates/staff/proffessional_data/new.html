@@ -1,0 +1,174 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+    {% block content %}
+
+    <div class="pagetitle ">
+        <h1 class="text-white">Proffession</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Tables</li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+        </nav>
+      </div><!-- End Page Title -->
+  
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-12">
+  
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Proffession</h5>
+               
+             <div id="opp_approved" style="display: none;" class="table-responsiv" >
+
+             
+                <!-- Table with stripped rows -->
+                <table class="table datatable" >
+                  <a
+                  onclick="toggle('opp')"
+                  class="btn btn-success btn-lg"
+                  >Pending</a
+                >
+                  <div class="pagetitle">
+                    <h1>Approved Proffession</h1></div>
+                  <thead>
+                    <tr class="w-100">
+                      <th scope="col">Phone_number</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Proffession</th>
+                      <th scope="col">Current_resident</th>
+                      <th scope="col">Date</th>
+
+                     
+
+
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                
+                    {% for data in appr_obj %}                                    
+                    <tr>
+                      
+                      <td>{{ data.phone_number }} </td> 
+                      <td>{{ data.name }}</td>
+                      <td>{{ data.proffession }}</td>
+                      <td>{{ data.ward }}</td>
+                      <td>{{ data.date }}</td>
+                      <td>
+                      
+                        <a
+                          href="{% url 'delete' data.id appr_model.model %}"
+                          class="btn btn-danger btn-sm"
+                          >Delete</a
+                        >
+                      
+                      
+                     </td>
+                    
+                     
+                       
+                    </tr>
+
+                                
+                                    
+                    {% endfor %}
+                   
+                    
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+            
+              </div>
+
+<div id="opp" class="table-responsiv">
+            
+              <table class="table datatable" >
+                <a
+                onclick="toggle('opp')"
+                class="btn btn-success btn-lg"
+                >approved</a
+              >
+                <div class="pagetitle">
+                  <h1>Pending Proffession</h1></div>
+                <thead>
+                  <tr>
+                     
+                           
+                        
+                    <th scope="col">Phone_number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Proffession</th>
+                    <th scope="col">Current_resident</th>
+                    <th scope="col">Date</th>
+
+                   
+
+                   
+
+                   
+
+
+
+                  </tr>
+                </thead>
+                <tbody>
+              
+                  {% for data in obj %}                                    
+                  <tr>
+                    <td>{{ data.phone_number }} </td> 
+                       <td>{{ data.name }}</td>
+                       <td>{{ data.proffession }}</td>
+                       <td>{{ data.ward }}</td>
+                       <td>{{ data.date }}</td>
+                       <td>
+                      
+                        <a
+                          href="{% url 'delete' data.id model.model %}"
+                          class="btn btn-danger btn-sm"
+                          >Delete</a
+                        >
+                      
+                      
+                     </td>
+                     <td>
+                      <a type="button" class="btn btn-success btn-sm"
+                      href="{% url 'approve' data.id model.model %}"
+                      >Approve</a>
+
+                     </td>
+                     
+                  </tr>
+
+                              
+                                  
+                  {% endfor %}
+                 
+                  
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows --></div>
+            </div>
+
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+      <script src="/static/js/toggle.js"></script>
+
+
+
+
+
+
+     
+    
+
+
+
+    {% endblock %}

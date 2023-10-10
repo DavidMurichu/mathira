@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="container-fluid bg-dark feature py-5 pb-lg-0" id="How-to-Apply" style="margin-bottom: 135px;">
+        <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+            <h6 class=" text-uppercase p-3">Project Request Form</h6>
+           
+          </div>
+        <div class="container py-5 pb-lg-0">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="text-white mb-5">
+                        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-users fs-4 text-white"></i>
+                        </div>
+                        <h4 class="text-white">Contacting the MP's Office </h4>
+                        <p class="mb-0"> To book an appointment with the MP in Mathira, residents can contact the office through phone 0706 202 203 or email us info@Mathiraconstitueny.com The office staff will then provide available dates for the meeting and schedule an appointment.</p>
+                        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-clock fs-4 text-white"></i> 
+                        </div>
+                        <h4 class="text-white">Confirming the Appointment</h4>
+                        <p class="mb-0">After booking the appointment, residents are required to confirm the meeting by providing personal details such as their name and ID number. This helps in verifying their identity and ensuring that the meeting is productive.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-block bg-primary h-100 text-center p-5 pb-lg-0">
+                    <h4 class="text-white">Online Booking </h4>
+                    <form method="POST" >
+
+                        {% csrf_token %}
+                        {% include 'partials/_messages.html' %}
+                        <!-- Add the form fields from forms.py -->
+                     <div class="row g-3 text-white" >
+                        <div class="col-md-6">
+                            {{ form.name.label_tag }} {{ form.name }}
+                        </div>
+                    
+                        <div class="col-md-6">
+                           
+                            {{ form.phone_number.label_tag }} {{ form.phone_number }}
+
+                        </div>
+                 
+                        <div class="col-md-6">
+                            {{ form.project.label_tag }} {{ form.project }}
+    
+                            </div>
+                       
+                        <div class="col-md-6">
+                            {{ form.ward.label_tag }} {{ form.ward }}
+
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.location.label_tag }} {{ form.location }}
+
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.sub_location.label_tag }} {{ form.sub_location }}
+
+                        </div>
+                        <div class="col-md-6">
+                        {{ form.date.label_tag }} {{ form.date }}
+
+                        </div>
+
+                        
+                         <br>
+                        <button type="submit" class="btn btn-primary py-md-3 px-md-5">Submit</button>
+                      </div>
+                    </form>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="text-white mb-5">
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+   
+{% endblock %}
+

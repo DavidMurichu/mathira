@@ -2,42 +2,127 @@
 {% load static %}
 
 {% block content %}
-{% if messages %}
-<div class="messages">
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-        <strong>{{ message }}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<section id="mathira-overview" class="py-5 section shadow p-3 mb-5 rounded border border-light bg-dark">
+    <div class="container">
+      <div class="row">
+        <!-- Overview Column -->
+        <div class="col-md-12 text-white">
+          <div class="overview-column p-4">
+            
+<div class="container">
+    
+    <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+    <h6 class=" text-uppercase p-3">Diaspora Application</h6>
+   
+  </div>
+    <div class="row g-5">
+    <p>Welcome to our Diaspora Page! Discover the pathway to joining our esteemed community of Diaspora. We invite individuals like you to become a part of a vibrant network that nurtures growth, knowledge, and collaboration.</p>
+    <div class="step col-lg-6">
+        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-file-earmark-arrow-up"></i>
+
+        </div>
+      <h5 class="text-light">Step 1: Submit Your Request</h5>
+      <p>To join our community of Diaspora, start by submitting a request. Click on the 'Submit Request' button to begin the process.
+
+      </p>
+       </div>
+  
+    <div class="step col-lg-6">
+        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-pencil"></i>
+
+        </div>
+      <h5 class="text-light">Step 2: Share Your Information</h5>
+     <p>Fill in the requested details in the provided form. We value accuracy and completeness in the information provided.
+
+     </p>
     </div>
-    {% endfor %}
+  
+    <div class="step col-lg-6">
+        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-upload"></i>
+
+        </div>
+      <h5 class="text-light">Step 3: Await Approval</h5>
+      <p>Once you've submitted your request, our team will carefully review the information provided. Please allow us some time to conduct a thorough evaluation.</p>
+    </div>
+  
+    <div class="step col-lg-6">
+        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-journal-check"></i>
+
+        </div>
+      <h5 class="text-light">Step 4: Consideration Process</h5>
+      <p>Our team will assess your request to ensure it aligns with our criteria and standards. We are dedicated to maintaining a community of Diaspora committed to excellence.
+
+      </p>
+    </div>
+  
+    <div class="step col-lg-6">
+        
+        <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-chat-dots"></i>
+
+        </div>
+      <h5 class="text-light">Step 5: Confirmation of Approval</h5>
+      <p>Upon successful review and approval of your request, you will receive a confirmation email. This email will contain details about accessing our Diaspora community.
+
+      </p>
+    </div>
+  
+    
 </div>
-{% endif %}
- 
+  
+  </div>
+  
+  
+          </div>
+        </div>
+  
+  
+  
+  
+        <!-- Map Column -->
+      </div>
+    </div>
+  </section>
 
             <div class="container-fluid bg-primary feature py-5 pb-lg-0 w-100" id="How-to-Apply" style="margin-bottom: 135px;">
                 <div class="container py-5 pb-lg-0">
                     <div class="row g-5">
                         <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 " style="border-radius: 100px;" >
-                            <h6 class=" text-uppercase p-3">Are you a Mathia Diaspora Resident?</h6>
-                            <h1 class="display-6" id="#">Register</h1>
+                            <h6 class=" text-uppercase p-3">Are you a Mathira Diaspora Resident Register</h6>
+                            <h1 class="display-6" id="#">
                         </div>
                         <div class="container-fluid bg-primary feature py-5 pb-lg-0" id="How-to-Apply" style="margin-bottom: 135px;">
                             <div class="container py-5 pb-lg-0">
                                 <div class="row g-5">
                                     <div class="col-lg-6">
                                         <div class="text-white mb-5">
-                                            <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                                <i class="fa fa-phone"></i>
+                                            <div class=" text-center bg-new w-50  " style="border-radius: 100px;" >
+                                                <h6 class=" text-uppercase p-2"> Form Guide</h6>
+                                               
+                                              </div>
+                                           
+        
+        <p>Thank you for taking the time to complete this form. Below is a guide to help you provide accurate information:</p>
+        
+        <ol>
+            <li><strong>Name:</strong> Enter your full name.</li>
+            <li><strong>Email:</strong> Enter your email address.</li>
 
-                                            </div>
-                                            <h4 class="text-white">Contacting the MP's Office </h4>
-                                            <p class="mb-0"> To book an appointment with the MP in Mathira, residents can contact the office through phone 0706 202 203 or email us info@Mathiraconstitueny.com The office staff will then provide available dates for the meeting and schedule an appointment.</p>
-                                            <div class="bg-secondary rounded-pill d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                                <i class="fa fa-clock fs-4 text-white"></i> 
-                                            </div>
-                                            <h4 class="text-white">Confirming the Appointment</h4>
-                                            <p class="mb-0">After booking the appointment, residents are required to confirm the meeting by providing personal details such as their name and ID number. This helps in verifying their identity and ensuring that the meeting is productive.</p>
-                                        </div>
+            <li><strong>ID Number:</strong> Provide your unique identification number.</li>
+            <li><strong>Country Code:</strong> Select your country's dialing code.</li>
+            <li><strong>Phone Number:</strong> Enter your phone number.</li>
+            <li><strong>Gender:</strong> Select your gender from the options provided.</li>
+            <li><strong>Ward:</strong> Select the ward you reside in.</li>
+            <li><strong>Location:</strong> Choose your specific location from the options given.</li>
+            <li><strong>Sub-Location:</strong> Specify your sub-location, if applicable.</li>
+            <li><strong>Date:</strong> Select the date of your submission.</li>  </ol>
+        
+        <p>Please ensure that all information provided is accurate and up to date. Your submission is important and will help us in processing your request effectively.</p>
+         </div>
                                     </div>
                         <div class="col-lg-6" id="OnlineReg">
                             <div class="bg-dark h-100 d-flex justify-content-between">

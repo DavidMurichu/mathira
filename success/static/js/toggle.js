@@ -10,7 +10,7 @@ function toggle(name){
   if (table.style.display === 'none'){
     table.style.display='';
     table1.style.display= 'none';
-    localStorage.setItem('lastTable', '');
+    localStorage.setItem('lastTable', 'table');
   }else{
     table.style.display='none';
     table1.style.display= '';
@@ -22,7 +22,7 @@ function setdisp(){
   var lastTable=localStorage.getItem('lastTable')
   if(lastTable==='table1'){
     table.style.display='none';
-    table1.style.display=''
+    table1.style.display='table'
   }
 }
 window.onload=setdisp;

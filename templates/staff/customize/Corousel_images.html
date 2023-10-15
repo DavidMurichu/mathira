@@ -3,19 +3,19 @@
 
     {% block content %}
     <div class="pagetitle">
-        <h1>Upcoming</h1>
+        <h1>Corousel</h1>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item">Customizer</li>
-            <li class="breadcrumb-item active">Upcoming Project</li>
+            <li class="breadcrumb-item active">Corousel</li>
           </ol>
         </nav>
       </div><!-- End Page Title -->
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Upcoming Projects</h5>
+            <h5 class="card-title">Corousel</h5>
 
             <!-- Slides only carousel -->
             <div  class="carousel slide" data-bs-ride="carousel">
@@ -23,15 +23,12 @@
                 <div class="">
                   <form method="POST" enctype="multipart/form-data">
                   {%  csrf_token %}
-                <div class="container">
-                  
-                <div class="text-center m-2">
-                    <label for="me" class="text-dark">{{ form.Upcoming_Project.label_tag }}</label>
-                    {{ form.Upcoming_Project }}
+                
+                  <label for="me" class="text-dark">{{ form.corousel_type.label_tag }}</label>
+                  {{ form.corousel_type }}
 
-                </div>
-                </div>
-            </div>
+                    <label for="me" class="text-dark">{{ form.Corousel.label_tag }}</label>
+                    {{ form.Corousel }}
                       <input type="submit">
                   </form>
                 </div>
@@ -46,18 +43,20 @@
           <div class="row">
 
         
-          {% for image,id in images  %}
+       
+          {% for image,id in images %}
+
+           
+            
           <div class="col-lg-6">
           
             
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">project</h5>
+                <h5 class="card-title"> {{image.corousel_type}} Image </h5>
                 
-                <h5 class="card-title">Upcoming project</h5>
-                    
                 <a
-                        href="{% url 'delete_image' id=id column_name='Upcoming_Project' is_described=0 %}"
+                        href="{% url 'delete_image' id=id column_name='Corousel' %}"
                         class="btn btn-danger btn-sm"
                         >Delete</a
                       >
@@ -65,7 +64,7 @@
                 <div  class="" data-bs-ride="">
                   <div class="text-dark">
                     <div class="carousel-item active">
-                      <img src="/{{ image.Upcoming_Project }}" class="d-block w-100" alt="...">
+                      <img src="/{{ image.Corousel }}" class="d-block w-100" alt="...">
                     </div>
                   
 
@@ -76,10 +75,7 @@
         
             
           </div>
-          
-          
           {% endfor %}
-
         </div>
       </div>
     </div>

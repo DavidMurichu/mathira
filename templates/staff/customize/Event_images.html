@@ -1,0 +1,249 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+    {% block content %}
+    <div class="pagetitle">
+        <h1>Events</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Customizer</li>
+            <li class="breadcrumb-item active">Events</li>
+          </ol>
+        </nav>
+      </div><!-- End Page Title -->
+{{uupcoming}}
+        <div class="card " style="background-color: green;">
+          <div class="card-body">
+            <h5 class="card-title">Events</h5>
+
+            <!-- Slides only carousel -->
+            <div  class="carousel slide" data-bs-ride="carousel" >
+              <div class="carousel-inner">
+                <div class="" >
+                  <form method="POST" enctype="multipart/form-data">
+                    {%  csrf_token %}
+                    <div class="row g-3 text-dark"  >
+                    <div class="col-md-6">
+                    <label for="me" class="text-dark">{{ form.event_type.label_tag }}</label>
+                    {{ form.event_type }}
+                  </div>
+                  
+                    <div class="col-md-6">
+                      <label for="me" class="text-dark">{{ form.event_name.label_tag }}</label>
+                      {{ form.event_name }}
+                    </div>
+                    <div class="col-md-6">
+                      <label for="me" class="text-dark">{{ form.event_agenda.label_tag }}</label>
+                      {{ form.event_agenda }}
+                    </div>
+                    <div class="col-md-6">
+                      <label for="me" class="text-dark">{{ form.event_place.label_tag }}</label>
+                      {{ form.event_place }}
+                    </div>
+                    <div class="col-md-6">
+                      <label for="me" class="text-dark">{{ form.event_date.label_tag }}</label>
+                      {{ form.event_date }}
+                    </div>
+                    <div class="col-md-6">
+                      <label for="me" class="text-dark">{{ form.Event.label_tag }}</label>
+                      {{ form.Event }}
+                    </div>
+                  </div>
+                        <input type="submit">
+                    </form>
+                </div>
+              </div>
+            </div><!-- End Slides only carousel-->
+          </div>
+        </div>
+
+
+      <section class="section">
+        <div class="container" id="appointment">
+         
+          <div class="card">
+            <div class="card-body bg-secondary table-responsive">
+              <h5 class="card-title"> <strong class="btn btn-success btn-lg"> Upcoming Events</strong> </h5>
+              <a
+              onclick="toggle('appointment')"
+              class="btn btn-success btn-sm w-30"
+              >Switch</a
+            >
+              <!-- Table with styled rows -->
+              <div class="table-container">
+                <table class="table table-striped table-bordered datatable">
+                  <thead>
+                    <tr class="text-dark">
+                      <th scope="col">Event Type</th>
+                      <th scope="col">Main Agenda</th>
+                      <th scope="col">Place To Be Held</th>
+                      <th scope="col">Commissioned Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+          <!-- Add your table rows here -->
+          {% for id, image, type, name, place, agenda, date in upcoming %}
+             
+                    <tr class="table-info" >
+                      
+              
+                      <td>{{ name }}</td>
+                      <td>{{ agenda }}</td>
+                      <td>{{ place }}</td>
+                      <td>{{ date }}</td>
+                      <td> <a
+                         href="{% url 'delete_image' id=id column_name='Event'  %}"
+                        class="btn btn-danger btn-sm"
+                        >Delete</a
+                      ></td>
+    
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- End Table with styled rows -->
+        
+            </div>
+          </div>
+        </div>
+
+<div id="appointment_approved" style="display: none;">
+          <div class="card" >
+            
+            <div class="card-body bg-secondary table-responsive">
+              <h5 class="card-title"> <strong class="btn btn-success btn-lg"> Past Events</strong> </h5>
+              <a
+            onclick="toggle('appointment')"
+            class="btn btn-success btn-sm w-30"
+            >Switch</a
+          >
+              <!-- Table with styled rows -->
+              <div class="table-container">
+                <table class="table table-striped table-bordered datatable">
+                  <thead>
+                    <tr class="text-dark">
+                      <th scope="col">Event Name</th>
+                      <th scope="col">Main Agenda</th>
+                      <th scope="col">Place To Be Held</th>
+                      <th scope="col">Commissioned Date</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+           
+                    <!-- Add your table rows here -->
+                    {% for id, image, type, name, place, agenda, date in past %}
+                    <tr class="table-info" >
+                      
+                      <td>{{ name }}</td>
+                      <td>{{ agenda }}</td>
+                      <td>{{ place }}</td>
+                      <td>{{ date }}</td>
+                      <td> <a
+                        href="{% url 'delete_image' id=id column_name='Event'  %}"
+                        class="btn btn-danger btn-sm"
+                        >Delete</a
+                      ></td>
+
+    
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                  
+                </table>
+              </div>
+              <!-- End Table with styled rows -->
+        
+            </div>
+            
+          </div>
+          <div class="container" >
+            <div class="row">
+    
+          
+              {% for id, image, type, name, place, agenda, date in past %}
+              
+            <div class="col-lg-6">
+            
+              
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"> {{ type }} Event Image </h5>
+                  
+                   <a
+                    href="{% url 'delete_image' id=id column_name='Event'  %}"
+                    class="btn btn-danger btn-sm"
+                    >Delete</a
+                  >
+                  <!-- Slides only carousel -->
+                  <div  class="" data-bs-ride="">
+                    <div class="text-dark">
+                      <div class="carousel-item active">
+                        <img src="/{{image}}" class="d-block w-100" alt="...">
+                      </div>
+                    
+    
+                    </div>
+                  </div><!-- End Slides only carousel-->
+                </div>
+              </div>
+          
+              
+            </div>
+            
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  </section>
+
+      <script src="/static/js/toggle.js"></script>
+      <div class="container" id="upcoming" >
+        <div class="row">
+
+      
+          {% for id, image, type, name, place, agenda, date in upcoming %}
+          
+        <div class="col-lg-6">
+        
+          
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"> {{ type }} Event Image </h5>
+              
+               <a
+                href="{% url 'delete_image' id=id column_name='Event'  %}"
+                class="btn btn-danger btn-sm"
+                >Delete</a
+              >
+              <!-- Slides only carousel -->
+              <div  class="" data-bs-ride="">
+                <div class="text-dark">
+                  <div class="carousel-item active">
+                    <img src="/{{image}}" class="d-block w-100" alt="...">
+                  </div>
+                
+
+                </div>
+              </div><!-- End Slides only carousel-->
+            </div>
+          </div>
+      
+          
+        </div>
+        
+        {% endfor %}
+      </div>
+    </div>
+  
+
+      
+   
+    
+     
+       
+
+    {% endblock %}

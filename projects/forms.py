@@ -8,7 +8,7 @@ class proj_Form(forms.ModelForm):
             'date',
             'name',
             'phone_number',
-
+            'project_description',
             'ward',
             'location',
             'sub_location',
@@ -18,6 +18,8 @@ class proj_Form(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control',
                                            'placeholder':'name'}),
+            'project_description': forms.TextInput(attrs={'class': 'form-control',
+                                           'placeholder':'Repair of Kartina Kagochi Road'}),
             'project': forms.Select(attrs={'class': 'form-select'}),
             'phone_number': forms.TextInput(attrs={'class': 'form-control',
                                            'placeholder':'0768241466'}),

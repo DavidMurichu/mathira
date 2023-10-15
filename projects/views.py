@@ -7,11 +7,11 @@ from django.contrib import messages
 
 # Create your views here.
 def project_view(request, column_name):
-    model=column_name+'_Images'
-    model=globals()[model]
+    model=Project_Images
     context={
-        'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),   
-        'images':model.objects.values_list(column_name, flat=True),
+        'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),   
+        'images':model.objects.filter(project_type=column_name).values_list('Project', flat=True),
+        'data':model.objects.all(),
         'type':column_name
     }
    
@@ -19,7 +19,7 @@ def project_view(request, column_name):
 
 def request_project(request):
     context={
-        'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),   
+        'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),   
         'form':proj_Form()
     }
     if request.method == 'POST':

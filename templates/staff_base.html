@@ -43,7 +43,7 @@
   ======================================================== -->
 </head>
 
-<body class="bg-dark text-white">
+<body class=" text-white bg-primary">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center bg-dark text-white">
@@ -99,7 +99,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar bg-dark text-white">
+  <aside id="sidebar" class="sidebar text-white" style="background-color: green;">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
@@ -115,6 +115,12 @@
           <span>Busary</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed bg-dark text-light" href="{% url 'staff_event' %}">
+          <i class="bi bi-grid"></i>
+          <span>Events</span>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed bg-dark text-light" href="{% url 'data' dir='appointment_data' template='new_App' model='appointment' %}">
           <i class="bi bi-grid"></i>
@@ -173,7 +179,7 @@
 
   </aside><!-- End Sidebar-->
 
-  <main id="main" class="main " >
+  <main id="main" class="main bg-primary" >
      {% include 'partials/messages.html' %}
    
     {% block content %}
@@ -184,7 +190,7 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer text-white">
+  <footer id="footer" class="footer text-white " >
     <div class="copyright text-white">
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>

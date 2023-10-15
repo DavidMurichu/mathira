@@ -7,7 +7,7 @@ class Corousel_Images_Form(forms.ModelForm):
         fields = [
             
             'corousel_type',
-            'corousel_images',
+            'Corousel',
         ]
         
 class Outlook_Images_Form(forms.ModelForm):
@@ -16,7 +16,7 @@ class Outlook_Images_Form(forms.ModelForm):
         fields = [
             
             
-            'outlook_images',
+            'Outlook',
         ]
 
         
@@ -25,7 +25,7 @@ class Busary_Images_Form(forms.ModelForm):
     class Meta:
         model=Busary_Images
         fields=[
-            'busary_images'
+            'Busary'
         ]
          
       
@@ -34,13 +34,20 @@ class Event_Images_Form(forms.ModelForm):
     class Meta:
         model=Event_Images
         fields=[
-            'events_images',
+            'Event',
             'event_type',
+            'event_name',
+            'event_agenda',
+            'event_place',
+            'event_date',
         ]
         
         widgets = {
+            'event_place': forms.TextInput(attrs={'class': 'form-control','placeholder':'event place'}),
+            'event_agenda': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'event agenda'}),
+            'event_date': forms.DateInput(attrs={'class': 'form-control'}),
+            'event_name': forms.TextInput(attrs={'class': 'form-control','placeholder':'event name'}),
             'event_type': forms.Select(attrs={'class': 'form-select','placeholder':'MP, Secretary'}),
-
         } 
         
        
@@ -50,7 +57,7 @@ class Team_Images_Form(forms.ModelForm):
         fields=[
             'image_title',
             'image_name',
-            'team_images',
+            'Team',
         ]
         widgets = {
             'image_title': forms.TextInput(attrs={'class': 'form-control','placeholder':'MP, Secretary'}),
@@ -58,24 +65,19 @@ class Team_Images_Form(forms.ModelForm):
 
         }
         
-class Ongoing_Project_Images_Form(forms.ModelForm):
+class Project_Images_Form(forms.ModelForm):
     class Meta:
-        model=Ongoing_Project_Images
+        model=Project_Images
         fields=[
-            'Ongoing_Project'
+            'Project',
+            'project_name',
+            'project_location',
+            'project_date',
+            'project_type'
         ]
-        
-
-class Upcoming_Project_Images_Form(forms.ModelForm):
-    class Meta:
-        model=Upcoming_Project_Images
-        fields=[
-            'Upcoming_Project',
-        ]
-        
-class Past_Project_Images_Form(forms.ModelForm):
-    class Meta:
-        model=Past_Project_Images
-        fields=[
-            'Past_Project',
-        ]
+        widgets = {
+            'project_name': forms.TextInput(attrs={'class': 'form-control','placeholder':'project_name'}),
+            'project_date': forms.DateInput(attrs={'class': 'form-control'}),
+            'project_location': forms.TextInput(attrs={'class': 'form-control','placeholder':'project_location'}),
+            'project_type':forms.Select(attrs={'class':'form-select'})
+        }

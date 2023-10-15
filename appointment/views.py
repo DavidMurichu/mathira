@@ -10,7 +10,7 @@ from django.contrib import messages
 
 def book_appointment(request):
     context={
-    'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),
+    'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),
     'form':app_Form()
     }
     if request.method == 'POST':

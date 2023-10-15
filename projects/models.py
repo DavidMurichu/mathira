@@ -7,7 +7,9 @@ class Common_project(models.Model):
     name = models.CharField(max_length=50,
                             blank=False,
                             null=False)
-
+    project_description = models.CharField(max_length=50,
+                            blank=False,
+                            null=False)
 
     phone_number = models.CharField(
         max_length=10,

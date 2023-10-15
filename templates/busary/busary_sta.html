@@ -2,6 +2,164 @@
 {% load static %}
 
 {% block content %}
+<style>
+  .cardi {
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.cardi-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.cardi p {
+  font-size: 20px;
+  
+}
+
+</style>
+
+
+<section id="mathira-overview" class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Overview Column -->
+      <div class="col-md-12 text-light cardi bg-dark">
+        <div class="overview-column p-4">  
+<div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+  <h6 class=" text-uppercase p-3">Overview of Bursary Data</h6>
+ 
+</div>
+         
+          <p>On this page, you will find comprehensive visualizations illustrating the status of our bursary applications, approvals, and pending requests. These dynamic charts offer a clear snapshot of the impact our bursary program has had on aspiring individuals like you.
+          </p>
+          
+          <ol class="row g-5">
+
+            <li class="  col-lg-6"> <strong>Applied Bursaries: </strong><br> Visualizing the number of bursary applications received, showcasing the enthusiasm and interest in furthering education.</li>
+            
+            <li class=" col-lg-6"> <strong> Approved Bursaries: </strong><br> Highlighting the bursaries granted, underscoring our dedication to supporting deserving candidates in their educational pursuits.</li>
+            
+            <li class=" col-lg-6"> <strong> Pending Bursaries: </strong><br> Demonstrating ongoing evaluation and consideration of applications, ensuring a thorough and fair selection process.</li>
+            
+            <li class=" col-lg-6"> <strong> Total Allotment: </strong><br> Providing an overview of the total financial support allocated through our bursary program, emphasizing our financial commitment to education.</li>
+            
+          </ol>
+        </div>
+          <p>  We invite you to explore these visualizations and delve deeper into the impact of our bursary program. Your engagement with this data reaffirms our collective dedication to fostering education and enabling the growth of deserving individuals.</p>
+          
+        </div>
+     
+
+
+
+     
+
+      <!-- Map Column -->
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+    <h6 class=" text-uppercase p-3">Busary Allotment Chart</h6>
+   
+  </div>
+    <div class="container py-5 pb-lg-0 container-fluid bg-footer feature">
+        <div class="card col-lg-12 bg-dark">
+        
+        <section class="section">
+            <div class="container">
+            <div class="row ">
+                <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Busary Pie</h5>
+          
+                        <!-- Pie Chart -->
+                        <div id="pieChart"></div>
+          
+                        <script>
+                          var data=JSON.parse('{{data | escapejs}}')
+                       
+                          console.log(data.count)
+                          document.addEventListener("DOMContentLoaded", () => {
+                            new ApexCharts(document.querySelector("#pieChart"), {
+                              series: [data.count,data.approved,data.pending],
+                              chart: {
+                                height: 350,
+                                type: 'pie',
+                                toolbar: {
+                                  show: true
+                                }
+                              },
+                             
+                              labels: ['Applied', 'Approved', 'Pending']
+                            }).render();
+                          });
+                        </script>
+                        <!-- End Pie Chart -->
+          
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Busary Chart</h5>
+          
+                        <!-- Area Chart -->
+                        <div id="areaChart"></div>
+          
+                        <script>
+                          document.addEventListener("DOMContentLoaded", () => {
+                  
+                            new ApexCharts(document.querySelector("#areaChart"), {
+                              series: [{
+                                name: "Bursary",
+                                data: [data.count,data.approved,data.pending]
+                              }],
+                              chart: {
+                                type: 'area',
+                                height: 350,
+                                zoom: {
+                                  enabled: false
+                                }
+                              },
+                             xaxis: {
+                              categories: ['Applied','Approved', 'pending']
+                             },
+                             yaxis: {
+                              title:{
+                                text:'Total'
+                              },
+                              min:0,
+                             }
+                            }).render();
+                          });
+                        </script>
+                        <!-- End Area Chart -->
+          
+                      </div>
+                    </div>
+                  </div>
+          
+                </div>
+                 
+    
+              </div>
+        </section>
+    </div>
+</div>
+
+
     <div id="content">
         <div class="container-fluid bg-dark facts mt-2 py-5 mb-5">
             <div class="container py-5">
@@ -54,8 +212,7 @@
             </div>
         </div>
 
-
-
+        
    
 
     

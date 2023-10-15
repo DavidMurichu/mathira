@@ -3,8 +3,130 @@
 
 {% block content %}
     <!-- Navbar End -->
+    <section id="mathira-overview" class="py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Overview Column -->
+          <div class="col-md-12 text-light cardi bg-dark">
+            <div class="overview-column p-4">  
+    <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+      <h6 class=" text-uppercase p-3">Opportunities Insights:</h6>
+     
+    </div>
 
+    
+    <p>On this page, we present comprehensive visualizations that provide valuable insights into various opportunities Applied. These dynamic charts offer a clear snapshot of the status of opportunities, showcasing the enthusiasm and interest from individuals like you in advancing your skills and experiences.</p>
+    
+    <ol class="row g-5">
+        <li class="col-lg-6"><strong>Applied Opportunities:</strong><br>Visualizing the number of opportunities currently Applied, highlighting the array of options and the dedication to providing avenues for growth and development.</li>
+        <li class="col-lg-6"><strong>Approved Opportunities:</strong><br>Highlighting the opportunities that have been granted, underscoring our commitment to supporting and empowering individuals in their pursuits.</li>
+        <li class="col-lg-6"><strong>Pending Opportunities:</strong><br>Demonstrating ongoing evaluation and consideration of applications, ensuring a thorough and fair selection process that aligns with your goals and aspirations.</li>
+    </ol>
+    
+    <p>We invite you to explore these visualizations and delve deeper into the impact of the opportunities we offer. Your engagement with this data reaffirms our collective dedication to fostering growth and enabling deserving individuals to reach their full potential.</p>
 
+         
+    
+    
+    
+         
+    
+          <!-- Map Column -->
+        </div>
+      </div>
+    </section>
+    
+    <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+        <h6 class=" text-uppercase p-3">Oppotunity Chart</h6>
+       
+      </div>
+        <div class="container py-5 pb-lg-0 container-fluid bg-footer feature">
+            <div class="card col-lg-12 bg-dark">
+            
+            <section class="section">
+                <div class="container">
+                <div class="row ">
+                    <div class="col-lg-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Oppotunity Pie</h5>
+              
+                            <!-- Pie Chart -->
+                            <div id="pieChart"></div>
+              
+                            <script>
+                              var data=JSON.parse('{{data | escapejs}}')
+                           
+                              console.log(data.count)
+                              document.addEventListener("DOMContentLoaded", () => {
+                                new ApexCharts(document.querySelector("#pieChart"), {
+                                  series: [data.count,data.approved,data.pending],
+                                  chart: {
+                                    height: 350,
+                                    type: 'pie',
+                                    toolbar: {
+                                      show: true
+                                    }
+                                  },
+                                 
+                                  labels: ['Applied', 'Approved', 'Pending']
+                                }).render();
+                              });
+                            </script>
+                            <!-- End Pie Chart -->
+              
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="col-lg-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Oppotunity Chart</h5>
+              
+                            <!-- Area Chart -->
+                            <div id="areaChart"></div>
+              
+                            <script>
+                              document.addEventListener("DOMContentLoaded", () => {
+                      
+                                new ApexCharts(document.querySelector("#areaChart"), {
+                                  series: [{
+                                    name: "Bursary",
+                                    data: [data.count,data.approved,data.pending]
+                                  }],
+                                  chart: {
+                                    type: 'area',
+                                    height: 350,
+                                    zoom: {
+                                      enabled: false
+                                    }
+                                  },
+                                 xaxis: {
+                                  categories: ['Applied','Approved', 'pending']
+                                 },
+                                 yaxis: {
+                                  title:{
+                                    text:'Total'
+                                  },
+                                  min:0,
+                                 }
+                                }).render();
+                              });
+                            </script>
+                            <!-- End Area Chart -->
+              
+                          </div>
+                        </div>
+                      </div>
+              
+                    </div>
+                     
+        
+                  </div>
+            </section>
+        </div>
+    </div>
 
     <div class="container-fluid bg-dark facts mt-2 py-5 mb-5" id="Job-Statistics">
         <div class="container py-5">

@@ -31,7 +31,7 @@ class app_Form(forms.ModelForm):
                                            'placeholder':'age'}),
             'gender': forms.Select(attrs={'class': 'form-select','placeholder':'agenda'}),
             'education_level': forms.Select(attrs={'class': 'form-select'}),
-            'agenda': forms.Textarea(attrs={'class': 'form-control',
+            'agenda': forms.Textarea(attrs={'class': 'form-control','rows': 5, 'cols': 30,
                                             'placeholder': 'Write A Summary of your Agender '}),
             'ward': forms.Select(attrs={'class': 'form-select'}),
             'location': forms.Select(attrs={'class': 'form-select'}),

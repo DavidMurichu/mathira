@@ -2,7 +2,7 @@
 {% load static %}
 
     {% block content %}
-
+{{test}}{{hhigh_school_approved}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <!-- Rest of your form content -->
@@ -69,13 +69,13 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Busary </h5>
-                   <a href="{% url 'images' column_name='busary_images' model='Busary_Images' %}">Edit</a>
+                   <a href="{% url 'images' column_name='Busary' %}">Edit</a>
                   <!-- Slides only carousel -->
                   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                               
-                          <img src="{% static 'img/busary/busary.jpeg' %}" class="d-block w-100" alt="...">
+                          <img src="{% static 'img/common/busary.jpg' %}" class="d-block w-100" alt="...">
                         </div>
 
                       {% for busary_image in busary_images %}
@@ -103,13 +103,12 @@
             <div class="card">
               <div class="card-body">
                
-                <h5 class="card-title">Approved Busaries </h5>
-                <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >High Shool</a>
-                  <div class="dropdown-menu m-0">
-                      <a href="#" onclick="toggle('high_school')" class="dropdown-item" >Pending</a>
-                  </div>
-              </div>
+                <h5 class="card-title">Approved High School Busaries </h5>
+                <a
+                onclick="toggle('high_school')"
+                class="btn btn-success btn-lg"
+                >Pending</a
+              >
   <div class="table-responsive" >
                 <!-- Table with stripped rows -->
                 <table class="table datatable ">
@@ -127,7 +126,7 @@
                   </thead>
                   <tbody>
                     
-                    {% for date, name, parent,phone, School, gender, Resident,amount,id in high_school_approved %} 
+                    {% for id, date, name,admission, School, parent, education, amount, phone,gender, Resident in high_school_approved %} 
                     
                                               
                     <tr>
@@ -180,13 +179,12 @@
             <div class="card">
               <div class="card-body">
                
-                <h5 class="card-title">Pending Busaries</h5>
-                <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >High School</a>
-                  <div class="dropdown-menu m-0">
-                      <a href="#" onclick="toggle('high_school')" class="dropdown-item" >Approved</a>
-                  </div>
-              </div>
+                <h5 class="card-title">Pending High School Busaries</h5>
+                <a
+                onclick="toggle('high_school')"
+                class="btn btn-success btn-lg"
+                >Approved</a
+              >
               <div class="table-responsive" >
                 <!-- Table with stripped rows -->
                 <table class="table datatable table-responsivee">
@@ -204,7 +202,7 @@
                   </thead>
                   <tbody>
                     
-                    {% for date, name, parent,phone, School, gender, Resident,amount,id in high_school %} 
+                    {% for  id, date, name,admission, School, parent, education, amount, phone,gender, Resident in high_school %} 
                     
                                               
                     <tr>
@@ -265,13 +263,12 @@
             <div class="card">
               <div class="card-body">
                
-                <h5 class="card-title">Approved Busaries </h5>
-                <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >Collage</a>
-                  <div class="dropdown-menu m-0">
-                      <a href="#" onclick="toggle('collage')" class="dropdown-item" >Pending</a>
-                  </div>
-              </div>
+                <h5 class="card-title">Approved Collage Busaries </h5>
+                <a
+                onclick="toggle('collage')"
+                class="btn btn-success btn-lg"
+                >Pending</a
+              >
               <div class="table-responsive" >
                 <!-- Table with stripped rows -->
                 <table class="table datatable table-responsivee">
@@ -289,7 +286,7 @@
                   </thead>
                   <tbody>
                     
-                    {% for date, name, parent,phone, School, gender, Resident,amount,id in collage_approved %} 
+                    {% for  id, date, name,admission, School, parent, education, amount, phone,gender, Resident in collage_approved %} 
                     
                                               
                     <tr>
@@ -341,13 +338,12 @@
             <div class="card">
               <div class="card-body">
                
-                <h5 class="card-title">Pending Busaries</h5>
-                <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >Collage</a>
-                  <div class="dropdown-menu m-0">
-                      <a href="#" onclick="toggle('collage')" class="dropdown-item" >Approved</a>
-                  </div>
-              </div>
+                <h5 class="card-title">Pending Collage Busaries</h5>
+                <a
+                onclick="toggle('collage')"
+                class="btn btn-success btn-lg"
+                >Approved</a
+              >
               <div class="table-responsive" >
                 <!-- Table with stripped rows -->
                 <table class="table datatable table-responsivee">
@@ -365,7 +361,7 @@
                   </thead>
                   <tbody>
                     
-                    {% for date, name, parent,phone, School, gender, Resident,amount,id in collage %} 
+                    {% for  id, date, name,admission, School, parent, education, amount, phone,gender, Resident in collage %} 
                     
                                               
                     <tr>
@@ -428,13 +424,12 @@
             <div class="card">
               <div class="card-body">
                
-                <h5 class="card-title">Approved Busaries </h5>
-                <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >University</a>
-                  <div class="dropdown-menu m-0">
-                      <a href="#" onclick="toggle('university')" class="dropdown-item" >Pending</a>
-                  </div>
-              </div>
+                <h5 class="card-title">Approved University Busaries </h5>
+                <a
+                onclick="toggle('university')"
+                class="btn btn-success btn-lg"
+                >Pending</a
+              >
               <div class="table-responsive" >
                 <!-- Table with stripped rows -->
                 <table class="table datatable table-responsivee">
@@ -452,7 +447,7 @@
                   </thead>
                   <tbody>
                     
-                    {% for date, name, parent,phone, School, gender, Resident,amount,id in university_approved %} 
+                    {% for  id, date, name,admission, School, parent, education, amount, phone,gender, Resident in university_approved %} 
                     
                                               
                     <tr>
@@ -504,13 +499,12 @@
             <div class="card">
               <div class="card-body">
                
-                <h5 class="card-title">Pending Busaries</h5>
-                <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >University</a>
-                  <div class="dropdown-menu m-0">
-                      <a href="#" onclick="toggle('university')" class="dropdown-item" >Approved</a>
-                  </div>
-              </div>
+                <h5 class="card-title">Pending University Busaries</h5>
+                <a
+                onclick="toggle('university')"
+                class="btn btn-success btn-lg"
+                >Approved</a
+              >
               <div class="table-responsive" >
                 <!-- Table with stripped rows -->
                 <table class="table datatable table-responsivee">
@@ -528,7 +522,7 @@
                   </thead>
                   <tbody>
                     
-                    {% for date, name, parent,phone, School, gender, Resident,amount,id in university %} 
+                    {% for  id, date, name,admission, School, parent, education, amount, phone,gender, Resident in university %} 
                     
                                               
                     <tr>

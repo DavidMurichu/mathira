@@ -14,6 +14,15 @@
       border-radius: 20px;
       
     }
+   
+    /* Custom styles for the map column */
+    .map-column {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+ 
     
     .round {
               border-radius: 20px; /* Adjust the value to control the roundness */
@@ -25,7 +34,69 @@
 
   </style>
 
+<!-- About Start -->
+<div class="container-xxl about pt-1 bg-primary p-0 ">
+ 
+  <div class="container">
+    <div class="jumbotron w-30">
+      <h1 class="custom-h1 text-center">Welcome to Mathira Constituency</h1>
+  </div>
+      <div class="row gx-2">
+          <div class="col-lg-12 pb-5">
+              <div class="row gx-5 gy-4 mb-3">
+                  <div class="col-sm-7 text-white">
+                      <div class="d-flex align-items-center">
+                      
+                          <i class="fas fa-rocket display-1 text-secondary mr-3"></i>
+                          <h4 class="mb-0">Mission</h4>
+                      </div>
+                      <p>To transform the lives of the people of Mathira Constituency by professionally managing available resources as well as create an enabling environment for the economic empowerment and prosperity of all constituents.</p>
+                  </div>
+                  <div class="col-sm-5 text-white">
+                      <div class="d-flex align-items-center">
+                          <i class="fa fa-eye display-1 text-secondary mr-3"></i>
+                          <h4 class="mb-0">Vision</h4>
+                      </div>
+                      <p>To be a truly developed constituency where every individual has an equal opportunity to prosper.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
 
+    <!-- Include this section wherever you want the Mathira Constituency Overview section to appear in your main template -->
+
+<section id="mathira-overview" class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Overview Column -->
+      <div class="col-md-6 text-white">
+        <div class="overview-column p-4">
+          <h2 class="text-white">Mathira Constituency Overview</h2>
+          <p>
+            Mathira is a constituency located in Nyeri County, Kenya. It is known for its diverse population and rich cultural heritage. The constituency is committed to improving the lives of its residents through various initiatives in education, healthcare, infrastructure, and community development.
+          </p>
+          <p>
+            The representative of Mathira constituency is dedicated to serving the community and addressing the needs and concerns of its residents.
+          </p>
+        </div>
+      </div>
+
+      <!-- Map Column -->
+      <div class="col-md-6">
+        <div class="map-column">
+          <h2 class="text-primary">Constituency Map</h2>
+          <!-- Embed a map using an iframe -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.6623100117034!2d37.010255814839956!3d-0.5460108996675616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f6495c73e99c5%3A0x120c491a02a5b94e!2sMathira%20Constituency!5e0!3m2!1sen!2ske!4v1633659186804!5m2!1sen!2ske" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+   </div>
+</div>
+
+   
     
 
    <!-- new Start-->
@@ -34,16 +105,12 @@
     <div class="row ">
 
       <div class="mb-3 pb-2">
-        <style>
         
-  </style><div class="jumbotron w-30">
-            <h1 class="custom-h1">Welcome to Mathira Constituency</h1>
-        </div>
- 
-                        <h1 class="display-5 text-center">Mathira Overview</h1>
-                    </div>
+      </div>
 
-
+      <div class="jumbotron text-center">
+        <h1 class="custom-h1">Mathira Overview</h1>
+    </div>
                     <div class="col-lg-6 mb-6 p-2">
                       <div class="card " style="height: 100%;">
                           <div class="card-body">
@@ -53,11 +120,11 @@
                               <div class="carousel-inner">
                                   <div class="carousel-item active">
                                       
-                                      <img src="{% static 'img/projects/project.jpeg' %}" class="d-block w-100" alt="...">
+                                      <img src="{% static 'img/common/project.jpg' %}" class="d-block w-100" alt="...">
                                     </div>
                                     {% for image in project_images %}
 
-                                              {% if image != '' %}
+                                              {% if image != 1 %}
           
                                   <div class="carousel-item ">
                                     <img src="/{{image}}" class="d-block w-100" alt="...">
@@ -82,7 +149,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             
-                            <img src="{% static 'img/outlook/outlook.png' %}" class="d-block w-100" alt="...">
+                            <img src="{% static 'img/common/outlook.jpg' %}" class="d-block w-100" alt="...">
                           </div>
                           {% for image in outlook_images %}
 
@@ -112,8 +179,9 @@
                       <div class="carousel-inner">
                           <div class="carousel-item active">
                               
-                              <img src="{% static 'img/events/events.jpeg' %}" class="d-block w-100" alt="...">
+                              <img src="{% static 'img/common/event.jpg' %}" class="d-block w-100" alt="...">
                             </div>
+                          
                           {% for image in event_images %}
                           
                           {% if image != '' %}
@@ -148,7 +216,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         
-                        <img src="{% static 'img/busary/busary.jpeg' %}" class="d-block w-100" alt="...">
+                        <img src="{% static 'img/common/busary.jpg' %}" class="d-block w-100" alt="...">
                       </div>
                       {% for image in busary_images %}
                           
@@ -180,34 +248,7 @@
   </section>
 <!--newend-->
 
-<!-- About Start -->
-<div class="container-xxl about pt-1 bg-primary p-0 ">
-  <div class="container">
-      <div class="row gx-2">
-          <div class="col-lg-12 pb-5">
-              <div class="row gx-5 gy-4 mb-3">
-                  <div class="col-sm-7 text-white">
-                      <div class="d-flex align-items-center">
-                      
-                          <i class="fas fa-rocket display-1 text-secondary mr-3"></i>
-                          <h4 class="mb-0">Mission</h4>
-                      </div>
-                      <p>To transform the lives of the people of Mathira Constituency by professionally managing available resources as well as create an enabling environment for the economic empowerment and prosperity of all constituents.</p>
-                  </div>
-                  <div class="col-sm-5 text-white">
-                      <div class="d-flex align-items-center">
-                          <i class="fa fa-eye display-1 text-secondary mr-3"></i>
-                          <h4 class="mb-0">Vision</h4>
-                      </div>
-                      <p>To be a truly developed constituency where every individual has an equal opportunity to prosper.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-   </div>
-</div>
 
-   
 <!-- About End -->
 
     <!-- Services Start -->
@@ -216,7 +257,7 @@
             <div class="row g-5">
                     <div class="mb-3 pb-2">
  
-                        <h1 class="display-5 text-center custom-card">OUR 5-YEARS PRIORITY AGENDA</h1>
+                        <h1 class="display-5 text-center custom-card">OUR TOP AGENDA GOALS</h1>
                     </div>
                     <div class="container">
                         <div class="row">
@@ -224,8 +265,13 @@
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219);  ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">Agriculture</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <p class="card-text text-white"><ul class="text-white">
+                                  <li>Enhanced Agricultural Productivity and Sustainability</li>
+                                  <li>Rural Farmer Empowerment and Capacity Building</li>
+                                  <li>Diversified Crop Production and Market Access</li>
+                                  <li>Investment in Agri-Infrastructure and Technology</li>
+                                  <li>Climate Resilience and Disaster Preparedness</li>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -234,8 +280,13 @@
                             <div class="card cardi text round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">Health</h4>
-                                <p class="card-text text-white">This alaldjfhjfgujgjhkjhhkgflkf;rtoitopjhnshe'hs'nhs ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                              <ul class="text-white">
+                                  <li>Improved Healthcare Access and Affordability</li>
+                                  <li>Enhanced Healthcare Infrastructure and Facilities</li>
+                                  <li>Health Education and Awareness Programs</li>
+                                  <li>Disease Prevention and Vaccination Campaigns</li>
+                                  <li>Mental Health Awareness and Support Services</li>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -244,8 +295,13 @@
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">Inflastracture</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <ul class="text-white">
+                                  <li>Modernization and Maintenance of Roads and Highways</li>
+                                  <li>Improved Public Transportation Systems</li>
+                                  <li>Upgrading and Expanding Energy and Power Infrastructure</li>
+                                  <li>Enhanced Water and Sanitation Facilities</li>
+                                  <li>Development of Smart Cities and Urban Planning</li>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -254,8 +310,14 @@
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">Youth Empowerment</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <ul class="text-white">
+                                  <li>Educational Advancement and Skill Development</li>
+                                  <li>Employment Opportunities and Job Creation</li>
+                                  <li>Entrepreneurship and Small Business Support</li>
+                                  <li>Access to Mentorship and Guidance Programs</li>
+                                  <li>Engagement in Civic Participation and Leadership</li>
+                                </ul>
+                                
                               </div>
                             </div>
                           </div>
@@ -264,8 +326,14 @@
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">Men Empowerment</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <ul class="text-white">
+                                  <li>Promote Positive Masculinity and Gender Equality</li>
+                                  <li>Support Men's Mental and Emotional Health</li>
+                                  <li>Advocate for Men's Health and Well-being</li>
+                                  <li>Offer Skill Development and Employment Opportunities</li>
+                                  <li>Address Social and Cultural Stereotypes Affecting Men</li>
+                                </ul>
+                                
                               </div>
                             </div>
                           </div>
@@ -274,8 +342,14 @@
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">Women Empowerment</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <ul class="text-white">
+                                  <li>Promote Gender Equality and Women's Rights</li>
+                                  <li>Ensure Access to Quality Education and Skill Development for Women</li>
+                                  <li>Enhance Women's Health and Well-being</li>
+                                  <li>Empower Women Economically and Promote Entrepreneurship</li>
+                                  <li>Combat Gender-Based Violence and Discrimination</li>
+                                </ul>
+                                
                               </div>
                             </div>
                           </div>
@@ -284,8 +358,13 @@
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">SMEs</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <ul class="text-white">
+                                  <li>Facilitate Access to Funding and Financial Support</li>
+                                  <li>Provide Training and Capacity Building for SMEs</li>
+                                  <li>Streamline Regulatory Processes and Reduce Bureaucratic Hurdles</li>
+                                  <li>Promote Innovation and Technological Advancements in SMEs</li>
+                                  <li>Enhance Market Access and International Opportunities</li>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -294,8 +373,14 @@
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">Urban Renovtion</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <ul class="text-white">
+                                  <li>Revitalize Urban Infrastructure and Public Spaces</li>
+                                  <li>Promote Sustainable Urban Planning and Design</li>
+                                  <li>Upgrade Housing and Improve Living Conditions</li>
+                                  <li>Enhance Transportation and Connectivity within Urban Areas</li>
+                                  <li>Foster Inclusive and Safe Urban Environments</li>
+                                </ul>
+                                
                               </div>
                             </div>
                           </div>
@@ -304,8 +389,14 @@
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
                                 <h4 class="card-title text-center mb-0">Vulnerable Community Help</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <ul class="text-white">
+                                  <li>Ensure Basic Needs and Adequate Housing for Vulnerable Groups</li>
+                                  <li>Provide Accessible Healthcare Services and Health Education</li>
+                                  <li>Support Education and Skill Development for Empowerment</li>
+                                  <li>Facilitate Social Support Networks and Community Integration</li>
+                                  <li>Advocate for Legal Protection and Equal Rights</li>
+                                </ul>
+                                
                               </div>
                             </div>
                           </div>
@@ -314,32 +405,20 @@
                           <div class="col-lg-4 mb-4 ">
                             <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
                               <div class="card-body cardi-body">
-                                <h4 class="card-title text-center mb-0">Card 1</h4>
-                                <p class="card-text text-white">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
+                                <h4 class="card-title text-center mb-0">Farmers</h4>
+                                <ul class="text-white">
+                                  <li>Enhanced Agricultural Knowledge and Training for Farmers</li>
+                                  <li>Access to Modern Farming Techniques and Technologies</li>
+                                  <li>Improved Access to Affordable Credit and Finance</li>
+                                  <li>Promote Crop Diversification and Market Linkages</li>
+                                  <li>Ensure Climate-Resilient and Sustainable Farming Practices</li>
+                                </ul>
+                                
                               </div>
                             </div>
                           </div>
 
-                          <div class="col-lg-4 mb-4 ">
-                            <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
-                              <div class="card-body cardi-body">
-                                <h4 class="card-title text-center mb-0">Card 1</h4>
-                                <p class="card-text text-white">This ggggggfffffddddddddddddddhwhwwhwwhwhwhwhwwhwhwwhwhdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-lg-4 mb-4 ">
-                            <div class="card cardi round" style="height: 100%; background-color: rgb(8, 170, 219); ">
-                              <div class="card-body cardi-body">
-                                <h4 class="card-title text-center mb-0">Card 1</h4>
-                                <p class="card-text text-left">This ggggggfffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddis a sample card. Some content goes here.</p>
-                               
-                              </div>
-                            </div>
-                          </div>
+                         
                           
                           <!-- Add similar cards for Card 2 and Card 3 -->
                         </div>

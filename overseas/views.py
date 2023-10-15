@@ -8,14 +8,14 @@ from .forms import diasp_Form
 
 def diaspora_affairs(request):
     context={
-    'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),
+    'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),
     'form':diasp_Form()
 }
     return render(request, 'diaspora/affairs.html', context)
 
 def diaspora_register(request):
     context={
-    'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),
+    'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),
     'form':diasp_Form()
 }
     if request.method == 'POST':

@@ -9,13 +9,13 @@ from django.contrib import messages
 def home(request):
     context={
 
-    'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),
-    'outlook_images':list(Outlook_Images.objects.values_list('outlook_images', flat=True)),
-    'team_images':list(Team_Images.objects.values_list('team_images', 'image_title',
+    'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),
+    'outlook_images':list(Outlook_Images.objects.values_list('Outlook', flat=True)),
+    'team_images':list(Team_Images.objects.values_list('Team', 'image_title',
             'image_name')),
-    'project_images':list(Upcoming_Project_Images.objects.values_list('Upcoming_Project', flat=True)),
-    'event_images':list(Event_Images.objects.values_list('events_images', flat=True)),
-    'busary_images':list(Busary_Images.objects.values_list('busary_images', flat=True))
+    'project_images':list(Project_Images.objects.values_list('Project', flat=True)),
+    'event_images':list(Event_Images.objects.values_list('Event', flat=True)),
+    'busary_images':list(Busary_Images.objects.values_list('Busary', flat=True))
     }
     return render(request,'nav_bar_url/home.html', context)
 

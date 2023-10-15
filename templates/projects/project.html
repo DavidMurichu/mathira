@@ -6,7 +6,105 @@
 {% block content %}
        
 
+<style>
+  .table_custom{      
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  
+  }
+  
+  .card {
+  background-color: #ccc;
+  border-radius: 10px;
+  }
+  
+  .table-container {
+  max-height: 300px;
+  overflow-y: auto;
+  }
+  </style>
+  <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >
+    <h6 class=" text-uppercase p-3">{{type}} </h6>
+   
+  </div>
+  <div class="card p-3 m-2">
+    <div class="card-body color_me table-responsive">
+      <h5 class="card-title"> {{type}} </h5>
+  
+      <!-- Table with styled rows -->
+      <div class="table-container">
+        <table class="table table-striped table-bordered datatable">
+          <thead>
+            <tr class="text-dark">
+           
+              <th scope="col">Project Name</th>
+              <th scope="col">Project Location</th>
+              <th scope="col">Project Status</th>
+              <th scope="col">Commissioned Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Add your table rows here -->
+            {% for data in data %}
+            <tr class="table-info" >
+              
+              <td>{{ data.project_name }}</td>
+              <td>{{ data.project_location }}</td>
+        
+              <td>{{ data.project_type }}</td>
 
+              <td>{{ data.project_date }}</td>
+  
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <!-- End Table with styled rows -->
+  
+    </div>
+  </div>
+  
+  
+  <section id="mathira-overview" class="py-5">
+    <div class="container ">
+      <div class="row g-5 text-light">
+     
+           
+<div class="header-section">
+  <h1 >Explore Our Impactful Projects</h1>
+  <p>Welcome to a realm of inspiration and transformation. Our projects embody our commitment to making a tangible difference in the world we live in. Each endeavor is more than a mere venture; it's a journey fueled by passion, dedication, and the unwavering belief in positive change.</p>
+</div>
+
+<div class="section col-lg-6">
+  <h2>Our Vision</h2>
+  <p>At the heart of our projects lies a shared vision – a vision of a better tomorrow. A tomorrow where communities thrive, where individuals find opportunities to flourish, and where innovation paves the way to a brighter future. We envision a world where every project leaves an indelible mark, shaping lives and leaving a legacy of progress.</p>
+</div>
+
+<div class="section col-lg-6">
+  <h2>Diverse Endeavors, Common Purpose</h2>
+  <p>Our projects encompass a diverse array of causes and industries, each designed to address unique challenges. From education and healthcare to sustainability and technology, we strive for a comprehensive impact that uplifts society as a whole. Each project resonates with a common purpose: to create meaningful and lasting change.</p>
+</div>
+
+<div class="section col-lg-6">
+  <h2>Uniting Passion with Action</h2>
+  <p>Every project is a manifestation of collective passion and a deep-rooted desire to make a difference. We bring together individuals, communities, and organizations, forging powerful partnerships that drive progress. It's this unity that fuels our projects, propelling them towards success and transforming aspirations into achievements.</p>
+</div>
+
+<div class="section col-lg-6">
+  <h2>Join Us on this Journey</h2>
+  <p>Explore our projects, each a testament to the power of collective action. Engage with us, support us, and be part of a transformative journey towards a better world. Together, we can turn visions into reality and shape a future that is not only promising but positively impactful.</p>
+</div>
+
+  
+  
+  
+      
+        <!-- Map Column -->
+      </div>
+    </div>
+  </section>
 
     <div class="container py-5 pb-lg-0 container-fluid bg-footer feature">
       <div class="mx-auto text-center mb-5 m-0 p-0 bg-new w-50 m-2 p-3 " style="border-radius: 100px;" >

@@ -21,13 +21,13 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Team</h5>
-                 <a href="{% url 'images' column_name='team_images' model='Team_Images' %}">Edit</a>
+                 <a href="{% url 'images' column_name='Team' %}">Edit</a>
                 <!-- Slides only carousel -->
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                             
-                        <img src="{% static 'img/team/team.jpg' %}" class="d-block w-100" alt="...">
+                        <img src="{% static 'img/common/team.jpeg' %}" class="d-block w-100" alt="...">
                       </div>
                     {% for team_image in team_images %}
                     {% if team_image != '' %}
@@ -46,13 +46,13 @@
             <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Corousel</h5>
-                   <a href="{% url 'images' column_name='corousel_images' model='Corousel_Images' %}">Edit</a>
+                   <a href="{% url 'images' column_name='Corousel'  %}">Edit</a>
                   <!-- Slides only carousel -->
                   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             
-                            <img src="{% static 'img/corousel/corousel.jpeg' %}" class="d-block w-100" alt="...">
+                            <img src="{% static 'img/common/corousel.jpg' %}" class="d-block w-100" alt="...">
                           </div>
                         {% for corousel_image in corousel_images %}
                         {% if corousel_image != '' %}
@@ -72,13 +72,13 @@
                 <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">Outlook</h5>
-                       <a href="{% url 'images' column_name='outlook_images' model='Outlook_Images' %}">Edit</a>
+                       <a href="{% url 'images' column_name='Outlook'  %}">Edit</a>
                       <!-- Slides only carousel -->
                       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 
-                                <img src="{% static 'img/outlook/outlook.png' %}" class="d-block w-100" alt="...">
+                                <img src="{% static 'img/common/outlook.jpg' %}" class="d-block w-100" alt="...">
                               </div>
                             {% for outlook_image in outlook_images %}
                                         {% if outlook_image != '' %}
@@ -106,13 +106,13 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Busary</h5>
-                   <a href="{% url 'images' column_name='busary_images' model='Busary_Images' %}">Edit</a>
+                   <a href="{% url 'images' column_name='Busary'  %}">Edit</a>
                   <!-- Slides only carousel -->
                   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             
-                            <img src="{% static 'img/busary/busary.jpeg' %}" class="d-block w-100" alt="...">
+                            <img src="{% static 'img/common/busary.jpg' %}" class="d-block w-100" alt="...">
                           </div>
                         {% for busary_image in busary_images %}
                         {% if busary_image != '' %}
@@ -142,7 +142,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             
-                            <img src="{% static 'img/projects/project.jpeg' %}" class="d-block w-100" alt="...">
+                            <img src="{% static 'img/common/project.jpg' %}" class="d-block w-100" alt="...">
                           </div>
                         {% for image in project_images %}
                         {% if image != '' %}
@@ -160,35 +160,6 @@
                 </div>
               </div>
             </div>
-            
-            
-            <div class="col-lg-6 mb-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Events</h5>
-                   <a href="{% url 'images' column_name='events_images' model='Event_Images' %}">Edit</a>
-                  <!-- Slides only carousel -->
-                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                              
-                          <img src="{% static 'img/events/events.jpeg' %}" class="d-block w-100" alt="...">
-                        </div>
-                      {% for event_image in events_images %}
-                      {% if event_image != '' %}
-                      <div class="carousel-item ">
-                        <img src="/{{event_image}}" class="d-block w-100" alt="...">
-                      </div>
-                      {% endif %}
-  
-                      {% endfor %}
-                    </div>
-                  </div><!-- End Slides only carousel-->
-              </div>
-                </div>
-              </div>
-
-
             </div>
             
 

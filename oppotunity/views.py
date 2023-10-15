@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from .forms import opp_Form
 from .models import *
-from django.db.models import Count, Sum
+from django.db.models import Count
 from staff.models import Corousel_Images
 from django.contrib import messages
+import json
 
 def oppotunity(request):
     context={
-    'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),
+    'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),
     'form':opp_Form()
     }
     if request.method == 'POST':
@@ -38,11 +39,16 @@ def oppotunity_sta(request):
         percentage= round( (approved/count)*100)
     else:
         percentage=0
+    pending=count-approved
+    data={'count':count, 'approved':approved, 'pending':pending}
+    data=json.dumps(data)
+
     context={
     'count':count,
     'approved':approved,
     'percentage':percentage,
-    'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),     
+    'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),  
+    'data':data   
     }
     return render(request, 'oppotunities/statistics.html',  context)
 

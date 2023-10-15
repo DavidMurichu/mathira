@@ -3,14 +3,14 @@ from .models import *
 from staff.models import Busary_Images
 from staff.models import Corousel_Images
 from django.db.models import Count,Sum
-
+import json
 
 
 # Create your views here.
 def busary(request):
     context={
-    'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),
-    'images':list(Busary_Images.objects.values_list('busary_images', flat=True))
+    'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),
+    'images':list(Busary_Images.objects.values_list('Busary', flat=True))
 
     }
     return render(request, 'busary/busary_apply.html', context )
@@ -27,13 +27,18 @@ def busary_sta(request):
         percentage=0
     amount=Busaryapproved.objects.aggregate(amount=Sum('amount'))
     amount=amount['amount']
+    pending=count-approved
+    data={'count':count, 'amount':amount, 'approved':approved, 'pending':pending}
+    data=json.dumps(data)
     context={
-    'corousel_images':list(Corousel_Images.objects.values_list('corousel_images',  'corousel_type')),
+    'corousel_images':list(Corousel_Images.objects.values_list('Corousel',  'corousel_type')),
     'count':count,
     'amount':amount,
     'approved':approved,
-    'percentage':percentage
+    'percentage':percentage,
+    'data':data
     }
+    
     
     
     return render(request, 'busary/busary_sta.html', context)

@@ -21,14 +21,15 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Upcoming Projects</h5>
-                 <a href="{% url 'images' column_name='Upcoming_Project' model='Upcoming_Project_Images' %}">Edit</a>
+                 <a href="{% url 'project_Data' column_name='Upcoming_Project' %}">Edit</a>
                 <!-- Slides only carousel -->
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                             
-                        <img src="{% static 'img/projects/upcoming/upcoming.jpeg' %}" class="d-block w-100" alt="...">
+                        <img src="{% static 'img/common/project.jpg' %}" class="d-block w-100" alt="...">
                       </div>
+                    
                     {% for upcoming_project in upcoming_projects %}
                     {% if upcoming_project != '' %}
                     <div class="carousel-item ">
@@ -46,13 +47,14 @@
             <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Ongoing</h5>
-                   <a href="{% url 'images' column_name='Ongoing_Project' model='Ongoing_Project_Images' %}">Edit</a>
+                  
+                   <a href="{% url 'project_Data' column_name='Ongoing_Project' %}">Edit</a>
                   <!-- Slides only carousel -->
                   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             
-                            <img src="{% static 'img/projects/ongoing/ongoing.jpeg' %}" class="d-block w-100" alt="...">
+                            <img src="{% static 'img/common/event.jpg' %}" class="d-block w-100" alt="...">
                           </div>
                         {% for ongoing_project in ongoing_projects %}
                         {% if ongoing_project != '' %}
@@ -75,13 +77,13 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Past</h5>
-                   <a href="{% url 'images' column_name='Past_Project' model='Past_Project_Images' %}">Edit</a>
+                   <a href="{% url 'project_Data' column_name='Past_Project' %}">Edit</a>
                   <!-- Slides only carousel -->
                   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                               
-                          <img src="{% static 'img/projects/past/past.jpeg' %}" class="d-block w-100" alt="...">
+                          <img src="{% static 'img/common/busary.jpg' %}" class="d-block w-100" alt="...">
                         </div>
                       {% for past_project in past_projects %}
                       {% if past_project != '' %}
